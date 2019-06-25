@@ -100,12 +100,12 @@
 								<form:input path="telephoneMobile" cssClass="form-control" />
 							</div>
 						</div>
-						<div class="form-group">
-							<label for="dateCreation" class="col-md-3 control-label">dateCreation</label>
+						<%-- <div class="form-group">
+							<label for="dateCreation"  class="col-md-3 control-label">dateCreation</label>
 							<div class="col-md-9">
-								<form:input path="dateCreation" cssClass="form-control" />
+								<form:input path="dateCreation" type="date" cssClass="form-control" />
 							</div>
-						</div>
+						</div> --%>
 						<div class="form-group">
 							<label for="genre" class="col-md-3 control-label">Genre</label>
 							<div class="col-md-9">

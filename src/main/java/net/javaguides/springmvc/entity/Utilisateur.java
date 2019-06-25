@@ -47,6 +47,7 @@ public class Utilisateur implements Serializable {
 	private String role;
 
 	private String statut;
+	
 
 	@Column(name="telephone_fixe")
 	private String telephoneFixe;
@@ -212,16 +213,16 @@ public class Utilisateur implements Serializable {
 		this.adresses = adresses;
 	}
 
-	public Adresse addAdress(Adresse adress) {
+	/*public Adresse addAdress(Adresse adress) {
 		getAdresses().add(adress);
-		adress.setUtilisateur(this);
+		adress.setUserAdress(this);
 
 		return adress;
-	}
+	}*/
 
 	public Adresse removeAdress(Adresse adress) {
 		getAdresses().remove(adress);
-		adress.setUtilisateur(null);
+		adress.setUserAdress(null);
 
 		return adress;
 	}
