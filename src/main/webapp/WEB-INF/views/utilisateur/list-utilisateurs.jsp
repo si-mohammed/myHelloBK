@@ -19,7 +19,7 @@
 				MySQL Example - Utilisateur Management</h3>
 			<hr />
 
-			<input type="button" value="Add Customer"
+			<input type="button" value="Add Utilisateur"
 				onclick="window.location.href='showForm'; return false;"
 				class="btn btn-primary" /> <br />
 			<br />
@@ -30,34 +30,40 @@
 				<div class="panel-body">
 					<table class="table table-striped table-bordered">
 						<tr>
-							<th>First Name</th>
-							<th>Last Name</th>
+							<th>Nom</th>
+							<th>Prenom</th>
 							<th>Email</th>
+							<th>Role</th>
+							<th>Statut</th>
+							<th>Date de Creation</th>
 							<th>Action</th>
 						</tr>
 
-						<!-- loop over and print our customers -->
+						<!-- loop over and print our utilisateurs -->
 						<c:forEach var="tempUtilisateur" items="${utilisateurs}">
 
-							<!-- construct an "update" link with customer id -->
-							<%-- <c:url var="updateLink" value="/utilisateur/updateForm">
-								<c:param name="utilisateurId" value="${tempUtilisateur.id}" />
-							</c:url> --%>
-
-							<!-- construct an "delete" link with customer id -->
-							<%-- <c:url var="deleteLink" value="/utilisateur/delete">
-								<c:param name="utilisateurId" value="${tempUtilisateur.id}" />
+							<!-- construct an "update" link with utilisateur id -->
+							<c:url var="updateLink" value="/utilisateur/updateForm">
+								<c:param name="utilisateurId" value="${tempUtilisateur.idUtilisateur}" />
 							</c:url>
- --%>
+
+							<!-- construct an "delete" link with utilisateur id -->
+							<c:url var="deleteLink" value="/utilisateur/delete">
+								<c:param name="utilisateurId" value="${tempUtilisateur.idUtilisateur}" />
+							</c:url>
+
 							<tr>
 								<td>${tempUtilisateur.nom}</td>
 								<td>${tempUtilisateur.prenom}</td>
 								<td>${tempUtilisateur.email}</td>
+								<td>${tempUtilisateur.role}</td>
+								<td>${tempUtilisateur.statut}</td>
+								<td>${tempUtilisateur.dateCreation}</td>
 
 								<td>
 									<!-- display the update link --> <a href="${updateLink}">Update</a>
 									| <a href="${deleteLink}"
-									onclick="if (!(confirm('Are you sure you want to delete this customer?'))) return false">Delete</a>
+									onclick="if (!(confirm('Are you sure you want to delete this utilisateur?'))) return false">Delete</a>
 								</td>
 
 							</tr>
