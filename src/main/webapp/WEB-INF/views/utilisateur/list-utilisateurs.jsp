@@ -55,7 +55,6 @@
 							<tr>
 								<td>${tempUtilisateur.nom}</td>
 								<td>${tempUtilisateur.prenom}</td>
-								
 								<td>${tempUtilisateur.email}</td>
 								<td>${tempUtilisateur.role}</td>
 								<td>${tempUtilisateur.statut}</td>
