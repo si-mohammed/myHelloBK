@@ -1,5 +1,7 @@
 package net.javaguides.springmvc.controller;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -43,6 +45,8 @@ public class UtilisateurController {
 	
 	@PostMapping("/saveUtilisateur")
 	public String saveUtilisateur(@ModelAttribute("utilisateur") Utilisateur theUtilisateur) {
+		Date date = new Date(System.currentTimeMillis());
+		theUtilisateur.setDateCreation(date);
 		utilisateurService.saveUtilisateur(theUtilisateur);	
 		return "redirect:/utilisateur/list";
 	}
