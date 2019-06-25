@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="springmvc5-springdatajpa2-jsp-mysql-example">
+		<class>net.javaguides.springmvc.entity.Administrateur</class>
+		<class>net.javaguides.springmvc.entity.Adresse</class>
+		<class>net.javaguides.springmvc.entity.Agent</class>
+		<class>net.javaguides.springmvc.entity.Client</class>
+		<class>net.javaguides.springmvc.entity.ClientDemande</class>
+		<class>net.javaguides.springmvc.entity.Compte</class>
+		<class>net.javaguides.springmvc.entity.CompteCourantAd</class>
+		<class>net.javaguides.springmvc.entity.CompteCourantStd</class>
+		<class>net.javaguides.springmvc.entity.CompteRemunere</class>
+		<class>net.javaguides.springmvc.entity.Customer</class>
+		<class>net.javaguides.springmvc.entity.DemandeInscription</class>
+		<class>net.javaguides.springmvc.entity.Operation</class>
+		<class>net.javaguides.springmvc.entity.OperationCredit</class>
+		<class>net.javaguides.springmvc.entity.OperationDebit</class>
+		<class>net.javaguides.springmvc.entity.Utilisateur</class>
+	</persistence-unit>
+</persistence>
