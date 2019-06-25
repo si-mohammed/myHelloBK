@@ -35,7 +35,9 @@
 							<th>Email</th>
 							<th>Role</th>
 							<th>Statut</th>
+							<th>Genre</th>
 							<th>Date de Creation</th>
+							<th>Date de Mise à jour</th>
 							<th>Action</th>
 						</tr>
 
@@ -58,7 +60,9 @@
 								<td>${tempUtilisateur.email}</td>
 								<td>${tempUtilisateur.role}</td>
 								<td>${tempUtilisateur.statut}</td>
+								<td>${tempUtilisateur.genre}</td>
 								<td>${tempUtilisateur.dateCreation}</td>
+								<td>${tempUtilisateur.date_MaJ}</td>
 
 								<td>
 									<!-- display the update link --> <a href="${updateLink}">Update</a>

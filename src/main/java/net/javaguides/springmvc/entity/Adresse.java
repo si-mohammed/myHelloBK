@@ -45,7 +45,7 @@ public class Adresse implements Serializable {
 	@JsonBackReference
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="Utilisateur_idUtilisateur")
-    private Utilisateur userAdress;
+    private Utilisateur utilisateur;
 
 	public Adresse() {
 	}
@@ -123,10 +123,10 @@ public class Adresse implements Serializable {
 	}
 
 	public Utilisateur getUtilisateur() {
-		return this.userAdress;
+		return this.utilisateur;
 	}
 
 	public void setUtilisateur(Utilisateur utilisateur) {
-		this.userAdress = utilisateur;
+		this.utilisateur = utilisateur;
 	}
 }

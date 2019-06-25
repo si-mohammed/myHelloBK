@@ -56,22 +56,22 @@ public class Utilisateur implements Serializable {
 
 	@JsonManagedReference
 	@Fetch(value = FetchMode.SUBSELECT)
-	@OneToMany(mappedBy = "userAdmin", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "utilisateur", fetch = FetchType.LAZY)
 	private List<Administrateur> administrateurs;
 
 	@JsonManagedReference
 	@Fetch(value = FetchMode.SUBSELECT)
-	@OneToMany(mappedBy="userAdress", fetch = FetchType.LAZY)		
+	@OneToMany(mappedBy="utilisateur", fetch = FetchType.LAZY)		
 	private List<Adresse> adresses;
 
 	@JsonManagedReference
 	@Fetch(value = FetchMode.SUBSELECT)
-	@OneToMany(mappedBy="userAgent", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy="utilisateur", fetch = FetchType.LAZY)
 	private List<Agent> agents;
 
 	@JsonManagedReference
 	@Fetch(value = FetchMode.SUBSELECT)
-	@OneToMany(mappedBy="userClient", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy="utilisateur", fetch = FetchType.LAZY)
 	private List<Client> clients;
 
 	public Utilisateur() {

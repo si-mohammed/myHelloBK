@@ -1,6 +1,5 @@
 package net.javaguides.springmvc.controller;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -54,7 +53,7 @@ public class UtilisateurController {
 	@GetMapping("/updateForm")
 	public String showFormForUpdate(@RequestParam("utilisateurId") int theId,
 									Model theModel) throws ResourceNotFoundException {
-		Utilisateur theUtilisateur = utilisateurService.getUtilisateur(theId);	
+		Utilisateur theUtilisateur = utilisateurService.getUtilisateur(theId);
 		theModel.addAttribute("utilisateur", theUtilisateur);
 		return "utilisateur/utilisateur-form";
 	}
