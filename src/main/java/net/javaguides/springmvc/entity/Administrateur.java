@@ -27,7 +27,7 @@ public class Administrateur implements Serializable {
 	@JsonBackReference
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="Utilisateur_idUtilisateur")
-	private Utilisateur userAdmin;
+	private Utilisateur utilisateur;
 	
 	@JsonBackReference
 	@Fetch(value = FetchMode.SUBSELECT)
@@ -46,11 +46,11 @@ public class Administrateur implements Serializable {
 	}
 
 	public Utilisateur getUtilisateur() {
-		return this.userAdmin;
+		return this.utilisateur;
 	}
 
 	public void setUtilisateur(Utilisateur utilisateur) {
-		this.userAdmin = utilisateur;
+		this.utilisateur = utilisateur;
 	}
 
 	public List<DemandeInscription> getDemandeInscriptions() {

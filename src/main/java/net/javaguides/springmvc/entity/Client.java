@@ -27,7 +27,7 @@ public class Client implements Serializable {
 	@JsonManagedReference
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="Utilisateur_idUtilisateur")
-	private Utilisateur userClient;
+	private Utilisateur utilisateur;
 
 	@JsonManagedReference
 	@ManyToOne(fetch = FetchType.EAGER)
@@ -56,11 +56,11 @@ public class Client implements Serializable {
 	}
 
 	public Utilisateur getUtilisateur() {
-		return this.userClient;
+		return this.utilisateur;
 	}
 
 	public void setUtilisateur(Utilisateur utilisateur) {
-		this.userClient = utilisateur;
+		this.utilisateur = utilisateur;
 	}
 
 	public Agent getAgent() {

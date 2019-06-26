@@ -27,7 +27,7 @@ public class Agent implements Serializable {
 	@JsonManagedReference
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="Utilisateur_idUtilisateur")
-	private Utilisateur userAgent;
+	private Utilisateur utilisateur;
 
 	@JsonManagedReference
 	@Fetch(value = FetchMode.SUBSELECT)
@@ -56,11 +56,11 @@ public class Agent implements Serializable {
 	}
 
 	public Utilisateur getUtilisateur() {
-		return this.userAgent;
+		return this.utilisateur;
 	}
 
 	public void setUtilisateur(Utilisateur utilisateur) {
-		this.userAgent = utilisateur;
+		this.utilisateur = utilisateur;
 	}
 
 	public List<Client> getClients() {

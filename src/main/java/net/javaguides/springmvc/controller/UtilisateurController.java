@@ -1,6 +1,5 @@
 package net.javaguides.springmvc.controller;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -22,19 +21,19 @@ import net.javaguides.springmvc.service.UtilisateurService;
 @Controller
 @RequestMapping("/utilisateur")
 public class UtilisateurController {
-	
+
 	private static final Logger LOG = LoggerFactory.getLogger(UtilisateurController.class);
 
 	@Autowired
 	private UtilisateurService utilisateurService;
-	
+
 	@GetMapping("/list")
 	public String listUtilisateurs(Model theModel) {
 		List<Utilisateur> theUtilisateurs = utilisateurService.getUtilisateurs();
 		theModel.addAttribute("utilisateurs", theUtilisateurs);
 		return "utilisateur/list-utilisateurs";
 	}
-	
+
 	@GetMapping("/showForm")
 	public String showFormForAdd(Model theModel) {
 		LOG.debug("inside show utilisateur-form handler method");
@@ -42,26 +41,21 @@ public class UtilisateurController {
 		theModel.addAttribute("utilisateur", theUtilisateur);
 		return "utilisateur/utilisateur-form";
 	}
-	
+
 	@PostMapping("/saveUtilisateur")
-	public String saveUtilisateur(Model theModel ,@ModelAttribute("utilisateur") Utilisateur theUtilisateur) {
-		Date date = new Date(System.currentTimeMillis());
-		theUtilisateur.setDateCreation(date);
+	public String saveUtilisateur(@ModelAttribute("utilisateur") Utilisateur theUtilisateur) {
 		utilisateurService.saveUtilisateur(theUtilisateur);	
-		int useradress = theUtilisateur.getIdUtilisateur();
-		System.out.println("useradress"+useradress);
-		theModel.addAttribute("utilisateurId", useradress);
-		return "redirect:/adresse/showForm";
+		return "redirect:/utilisateur/list";
 	}
-	
+
 	@GetMapping("/updateForm")
-	public String showFormForUpdate(@RequestParam("utilisateurId") int theId,
-									Model theModel) throws ResourceNotFoundException {
-		Utilisateur theUtilisateur = utilisateurService.getUtilisateur(theId);	
+	public String showFormForUpdate(@RequestParam("utilisateurId") int theId ,
+			Model theModel) throws ResourceNotFoundException {
+		Utilisateur theUtilisateur = utilisateurService.getUtilisateur(theId);
 		theModel.addAttribute("utilisateur", theUtilisateur);
 		return "utilisateur/utilisateur-form";
 	}
-	
+
 	@GetMapping("/delete")
 	public String deleteUtilisateur(@RequestParam("utilisateurId") int theId) throws ResourceNotFoundException {
 		utilisateurService.deleteUtilisateur(theId);

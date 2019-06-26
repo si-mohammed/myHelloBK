@@ -47,7 +47,6 @@ public class Utilisateur implements Serializable {
 	private String role;
 
 	private String statut;
-	
 
 	@Column(name="telephone_fixe")
 	private String telephoneFixe;
@@ -57,22 +56,22 @@ public class Utilisateur implements Serializable {
 
 	@JsonManagedReference
 	@Fetch(value = FetchMode.SUBSELECT)
-	@OneToMany(mappedBy = "userAdmin", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "utilisateur", fetch = FetchType.LAZY)
 	private List<Administrateur> administrateurs;
 
 	@JsonManagedReference
 	@Fetch(value = FetchMode.SUBSELECT)
-	@OneToMany(mappedBy="userAdress", fetch = FetchType.LAZY)		
+	@OneToMany(mappedBy="utilisateur", fetch = FetchType.LAZY)		
 	private List<Adresse> adresses;
 
 	@JsonManagedReference
 	@Fetch(value = FetchMode.SUBSELECT)
-	@OneToMany(mappedBy="userAgent", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy="utilisateur", fetch = FetchType.LAZY)
 	private List<Agent> agents;
 
 	@JsonManagedReference
 	@Fetch(value = FetchMode.SUBSELECT)
-	@OneToMany(mappedBy="userClient", fetch = FetchType.LAZY)
+	@OneToMany(mappedBy="utilisateur", fetch = FetchType.LAZY)
 	private List<Client> clients;
 
 	public Utilisateur() {
@@ -213,16 +212,16 @@ public class Utilisateur implements Serializable {
 		this.adresses = adresses;
 	}
 
-	/*public Adresse addAdress(Adresse adress) {
+	public Adresse addAdress(Adresse adress) {
 		getAdresses().add(adress);
-		adress.setUserAdress(this);
+		adress.setUtilisateur(this);
 
 		return adress;
-	}*/
+	}
 
 	public Adresse removeAdress(Adresse adress) {
 		getAdresses().remove(adress);
-		adress.setUserAdress(null);
+		adress.setUtilisateur(null);
 
 		return adress;
 	}
