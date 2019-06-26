@@ -102,9 +102,11 @@
 							</div>
 						</div>
 						<%-- <div class="form-group">
+
 							<label for="dateCreation" class="col-md-3 control-label">dateCreation</label>
+
 							<div class="col-md-9">
-								<form:input path="dateCreation" cssClass="form-control" />
+								<form:input path="dateCreation" type="date" cssClass="form-control" />
 							</div>
 						</div> --%>
 						<div class="form-group">

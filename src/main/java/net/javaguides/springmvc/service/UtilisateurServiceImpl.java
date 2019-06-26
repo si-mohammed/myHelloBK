@@ -16,6 +16,8 @@ import net.javaguides.springmvc.entity.Utilisateur;
 import net.javaguides.springmvc.exception.ResourceNotFoundException;
 import net.javaguides.springmvc.repository.UtilisateurRepository;
 
+
+
 @Service
 public class UtilisateurServiceImpl implements UtilisateurService {
 
@@ -25,8 +27,10 @@ public class UtilisateurServiceImpl implements UtilisateurService {
 	@Override
 	@Transactional
 	public List<Utilisateur> getUtilisateurs() {
-		List<Utilisateur> u=utilisateurRepository.findAll();
-		for(Utilisateur elem:u) {
+
+		 List<Utilisateur> u=utilisateurRepository.findAll();
+		
+		 for(Utilisateur elem:u) {
 
 			elem.setAdministrateurs(new ArrayList<Administrateur>());
 			elem.setAdresses(new ArrayList<Adresse>());
