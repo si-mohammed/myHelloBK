@@ -41,24 +41,11 @@ public class Adresse implements Serializable {
 	private String typeVoie;
 
 	private String ville;
-	
-	
+
 	@JsonBackReference
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="Utilisateur_idUtilisateur")
-	
-	private Adresse userAdress;
-   
-    
-	
-
-	/*public int getUtilisateurId() {
-		return utilisateurId;
-	}
-
-	public void setUtilisateurId(int utilisateurId) {
-		this.utilisateurId = utilisateurId;
-	}*/
+    private Utilisateur utilisateur;
 
 	public Adresse() {
 	}
@@ -135,12 +122,11 @@ public class Adresse implements Serializable {
 		this.ville = ville;
 	}
 
-	public Adresse getUserAdress() {
-		return this.userAdress;
+	public Utilisateur getUtilisateur() {
+		return this.utilisateur;
 	}
 
-	public void setUserAdress(Adresse adresse) {
-		this.userAdress = adresse;
+	public void setUtilisateur(Utilisateur utilisateur) {
+		this.utilisateur = utilisateur;
 	}
-			
 }
