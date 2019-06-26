@@ -28,6 +28,7 @@
 
 						<!-- need to associate this data with customer id -->
 						<form:hidden path="idUtilisateur" />
+						<form:hidden path="dateCreation" />
 						
 						<div class="form-group">
 							<label for="prenom" class="col-md-3 control-label">First
