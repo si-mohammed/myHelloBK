@@ -42,7 +42,7 @@
 						</tr>
 
 						<!-- loop over and print our customers -->
-						<c:forEach var="tempAdresse" items="${Adresses}">
+						<c:forEach var="tempAdresse" items="${adresses}">
 
 							<!-- construct an "update" link with customer id -->
 							<c:url var="updateLink" value="/adresse/updateForm">
@@ -56,12 +56,13 @@
 
 							<tr>
 								<td>${tempAdresse.num}</td>
-								<td>${tempAdresse.typevoie}</td>
-								<td>${tempAdresse.nomvoie}</td>
+								<td>${tempAdresse.typeVoie}</td>
+								<td>${tempAdresse.nomVoie}</td>
+								<td>${tempAdresse.cp}</td>
 								<td>${tempAdresse.ville}</td>
 								<td>${tempAdresse.pays}</td>
-								<td>complementadresse1</td>
-							    <td>complementadresse2</td>
+								<td>${tempAdresse.complementAdresse1}</td>
+							    <td>${tempAdresse.complementAdresse2}</td>
 
 								<td>
 									<!-- display the update link --> <a href="${updateLink}">Update</a>

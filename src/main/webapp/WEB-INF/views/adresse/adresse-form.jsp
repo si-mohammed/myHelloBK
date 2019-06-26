@@ -16,8 +16,8 @@
 <body>
 	<div class="container">
 		<div class="col-md-offset-2 col-md-7">
-			<h3 class="text-center">Spring MVC 5 + Spring Data JPA 2 + JSP + MySQL
-				Example - Adresse Management</h3>
+			<h3 class="text-center">Spring MVC 5 + Spring Data JPA 2 + JSP +
+				MySQL Example - Adresse Management</h3>
 			<div class="panel panel-info">
 				<div class="panel-heading">
 					<div class="panel-title">Add Adresse</div>
@@ -25,9 +25,9 @@
 				<div class="panel-body">
 					<form:form action="saveAdresse" cssClass="form-horizontal"
 						method="post" modelAttribute="adresse">
+
 						<!-- need to associate this data with customer id -->
 						<form:hidden path="idAdresse" />
-						<%-- <form:hidden path="utilisateurId"  value="16"   /> --%>
 						
 						<div class="form-group">
 							<label for="firstname" class="col-md-3 control-label">num</label>
@@ -54,26 +54,28 @@
 								<form:input path="pays" cssClass="form-control" />
 							</div>
 						</div>
-						
+
 						<div class="form-group">
 							<label for="complementAdresse1" class="col-md-3 control-label">complementadresse1</label>
 							<div class="col-md-9">
 								<form:input path="complementAdresse1" cssClass="form-control" />
+							</div>
 						</div>
-						
+
 						<div class="form-group">
 							<label for="complementAdresse2" class="col-md-3 control-label">complementadresse2</label>
 							<div class="col-md-9">
 								<form:input path="complementAdresse2" cssClass="form-control" />
+							</div>
 						</div>
-						
+
 						<%-- <div class="form-group">
 							<label for="userAdress" class="col-md-3 control-label">userAdress</label>
 							<div class="col-md-9">
-							<form:input path="userAdress" cssClass="form-control" />
+								<form:input path="userAdress" cssClass="form-control" />
+							</div>
 						</div> --%>
-						</div>
-						
+
 						<div class="form-group">
 							<!-- Button -->
 							<div class="col-md-offset-3 col-md-9">
